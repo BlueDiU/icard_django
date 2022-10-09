@@ -9,6 +9,7 @@ router_user.register(
     prefix='users', basename='users', viewset=UserApiViewSet
 )
 
+# Creating a route for the login and the user view.
 urlpatterns = [
     path('auth/login/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
     path('auth/me/', UserView.as_view())

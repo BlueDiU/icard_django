@@ -22,6 +22,7 @@ class UserApiViewSet(ModelViewSet):
         if password:
             request.data['password'] = make_password(password)
         else:
+            # Setting the password to the current password.
             request.data['password'] = request.user.password
 
         return super().partial_update(request, *args, **kwargs)   
